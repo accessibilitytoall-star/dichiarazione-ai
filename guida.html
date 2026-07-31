@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Come usare il badge AI — guida per canale</title>
+<style>
+  :root{--blu:#0C6CD3;--arancio:#EF8216;--beige:#EFE3C7;--grigio:#C6CFDB;--nero:#000}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--nero);background:#fff;line-height:1.6;font-size:18px}
+  a{color:var(--blu)}
+  .skip{position:absolute;left:-999px;top:0;background:#fff;padding:10px 16px;border:2px solid var(--blu);z-index:10}
+  .skip:focus{left:8px;top:8px}
+  header.top{background:var(--beige);padding:24px 20px;text-align:center;border-bottom:6px solid transparent;border-image:linear-gradient(90deg,var(--blu),var(--arancio)) 1}
+  .wrap{max-width:860px;margin:0 auto;padding:24px 20px 70px}
+  h1{font-size:29px}
+  h2{font-size:22px;margin:1.7em 0 .3em;padding-bottom:6px;border-bottom:3px solid var(--grigio)}
+  .canale{background:#fff;border:2px solid var(--grigio);border-left:10px solid var(--blu);border-radius:12px;padding:16px 18px;margin:16px 0}
+  .canale:nth-of-type(even){border-left-color:var(--arancio)}
+  code,pre{font-family:ui-monospace,Menlo,Consolas,monospace}
+  pre{background:var(--beige);color:var(--nero);padding:14px;border-radius:10px;overflow:auto;font-size:15px;border:1px solid var(--grigio)}
+  .lbl{display:inline-block;background:var(--blu);color:#fff;font-size:13px;font-weight:700;padding:3px 10px;border-radius:8px;margin-bottom:6px}
+  ol{padding-left:22px}
+  .file{background:var(--beige);border-radius:10px;padding:12px 16px;margin:10px 0;font-size:16px}
+</style>
+</head>
+<body>
+<a class="skip" href="#c">Salta al contenuto</a>
+<header class="top"><h1 style="margin:0">Come usare il badge AI</h1>
+<p style="margin:6px 0 0">Guida rapida per ogni canale — AccessibilityToAll</p></header>
+<main id="c" class="wrap">
+  <p>L'idea: <strong>un simbolo unico riconoscibile</strong> (il badge "AI") + <strong>una
+  sola pagina-dichiarazione</strong>. Poi consegni il "click" con lo strumento
+  che ogni canale permette. Nei post non si può cliccare l'immagine, quindi lì
+  usi QR + link scritto + alt text.</p>
+
+  <h2>I file del kit</h2>
+  <div class="file"><strong>badge-ai-simbolo.png</strong> — il logo/simbolo riconoscibile (angolo dei post, web, firma)</div>
+  <div class="file"><strong>badge-ai-email.png</strong> — badge orizzontale per email e firma (cliccabile)</div>
+  <div class="file"><strong>badge-ai-post-card.png</strong> — tessera con QR da usare come immagine/slide nei post</div>
+  <div class="file"><strong>qr-dichiarazione-ai.png</strong> — il QR da solo, se ti serve altrove</div>
+  <div class="file"><strong>index.html</strong> + <strong>dichiarazione-completa.html</strong> — le pagine che il badge apre</div>
+
+  <h2>1. Email e firma</h2>
+  <div class="canale">
+    <p>Inserisci <code>badge-ai-email.png</code> come immagine con un collegamento
+    alla dichiarazione. È il caso più semplice: qui il click funziona.</p>
+    <span class="lbl">HTML firma / email</span>
+<pre>&lt;a href="https://accessibilitytoall-star.github.io/dichiarazione-ai/"&gt;
+  &lt;img src="badge-ai-email.png"
+       alt="Trasparenza sull'uso dell'AI — apri la dichiarazione"
+       width="300"&gt;
+&lt;/a&gt;</pre>
+  </div>
+
+  <h2>2. Pagine web</h2>
+  <div class="canale">
+    <p>Metti <code>badge-ai-simbolo.png</code> nel footer o vicino ai contenuti,
+    con link alla dichiarazione.</p>
+    <span class="lbl">HTML pagina</span>
+<pre>&lt;a href="https://accessibilitytoall-star.github.io/dichiarazione-ai/"&gt;
+  &lt;img src="badge-ai-simbolo.png"
+       alt="Dichiarazione di trasparenza sull'uso dell'AI"
+       width="80"&gt;
+&lt;/a&gt;</pre>
+  </div>
+
+  <h2>3. Post social (il caso "non cliccabile")</h2>
+  <div class="canale">
+    <p>Qui l'immagine non è cliccabile, quindi usi <strong>tre strati insieme</strong>:</p>
+    <ol>
+      <li><strong>Immagine:</strong> aggiungi <code>badge-ai-simbolo.png</code> in un
+      angolo del post, oppure inserisci <code>badge-ai-post-card.png</code> (con QR)
+      come ultima immagine del carosello.</li>
+      <li><strong>Testo alternativo (alt):</strong> descrivilo per chi usa uno screen
+      reader (vedi sotto).</li>
+      <li><strong>Didascalia + link:</strong> incolla la frase pronta e metti il link
+      in bio e/o nel primo commento fissato.</li>
+    </ol>
+    <span class="lbl">Testo alternativo (alt) dell'immagine</span>
+<pre>Badge "AI" di AccessibilityToAll: contenuto realizzato con
+l'ausilio dell'intelligenza artificiale, con supervisione umana.
+Dichiarazione: accessibilitytoall-star.github.io/dichiarazione-ai</pre>
+    <span class="lbl">Frase per la didascalia</span>
+<pre>🔎 Trasparenza: questo contenuto è realizzato con l'ausilio
+dell'AI, con supervisione umana. La nostra dichiarazione:
+accessibilitytoall-star.github.io/dichiarazione-ai
+(link anche in bio 👆)</pre>
+  </div>
+
+  <h2>4. PDF, presentazioni, documenti</h2>
+  <div class="canale">
+    <p>Inserisci <code>badge-ai-simbolo.png</code> in copertina o a piè di pagina.
+    Nei PDF puoi renderlo cliccabile aggiungendo un collegamento all'immagine;
+    ricorda di impostare anche il testo alternativo del badge.</p>
+  </div>
+
+  <div class="canale" style="border-left-color:var(--blu)">
+    <h2 style="border:0;margin-top:0">Promemoria accessibilità</h2>
+    <ul>
+      <li>Metti <strong>sempre</strong> l'alt text sul badge: è ciò che rende
+      "azionabile" il logo per chi non vede l'immagine.</li>
+      <li>Il testo scritto del link (oltre al QR) serve a chi non può scansionare.</li>
+      <li>La pagina-dichiarazione deve restare accessibile e allo stesso indirizzo
+      nel tempo.</li>
+    </ul>
+  </div>
+</main>
+</body>
+</html>
